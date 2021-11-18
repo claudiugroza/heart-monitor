@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "482458827559",
+    "project_id": "heart-monitor-37ce9",
+    "storage_bucket": "heart-monitor-37ce9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:482458827559:android:bc0bcf4a29cce20fbdc702",
+        "android_client_info": {
+          "package_name": "ro.upt.sma.heart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "482458827559-705f3jbtvgbel999759cdfrsf6l2fnp4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAS9kYQ4ZGsiq65qXqp_s5s91hKJdQ4JNk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "482458827559-705f3jbtvgbel999759cdfrsf6l2fnp4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

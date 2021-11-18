@@ -2,6 +2,10 @@ apply plugin: 'java-library'
 apply plugin: "kotlin"
 
 dependencies {
+
+    implementation platform('com.google.firebase:firebase-bom:29.0.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     compile project(path: ':domain')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"

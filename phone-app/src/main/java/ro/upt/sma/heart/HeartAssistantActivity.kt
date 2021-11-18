@@ -23,8 +23,7 @@ class HeartAssistantActivity : AppCompatActivity(), HeartAssistantView {
 
         rv_heart_assistant_measurement_list.layoutManager = LinearLayoutManager(this)
 
-        // FIXME: add specific WEAR device code
-        val code = ""
+        val code = "74bf"
         this.presenter = Injection.provideHeartAssistantPresenter(code)
     }
 
