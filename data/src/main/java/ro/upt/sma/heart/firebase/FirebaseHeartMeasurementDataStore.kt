@@ -15,15 +15,15 @@ class FirebaseHeartMeasurementDataStore(userId: String) : HeartMeasurementReposi
     private val reference: DatabaseReference = FirebaseDatabase.getInstance().reference.child(userId)
 
     override fun post(heartMeasurement: HeartMeasurement) {
-        TODO("Post the new value to firebase")
+        // TODO 4: Post the new value to Firebase.
     }
 
     override fun observe(listener: HeartMeasurementRepository.HeartChangedListener) {
-        TODO("Add a child event listener and pass the last value to the listener")
+        // TODO 5: Add a child event listener and invoke the [listener] with the latest added value.
     }
 
     override fun retrieveAll(listener: HeartMeasurementRepository.HeartListLoadedListener) {
-        TODO("Retrieve all measurements and pass them to the listener")
+        // TODO 6: Retrieve all measurements and invoke the [listener].
     }
 
 

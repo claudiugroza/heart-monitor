@@ -3,9 +3,10 @@ package ro.upt.sma.heart
 import android.os.Bundle
 import android.text.format.DateUtils
 import android.util.Log
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.activity_heart_assistant.*
+import androidx.recyclerview.widget.RecyclerView
 import ro.upt.sma.heart.model.HeartMeasurement
 import ro.upt.sma.heart.presenters.assistant.HeartAssistantPresenter
 import ro.upt.sma.heart.presenters.assistant.HeartAssistantView
@@ -21,9 +22,9 @@ class HeartAssistantActivity : AppCompatActivity(), HeartAssistantView {
 
         setContentView(R.layout.activity_heart_assistant)
 
-        rv_heart_assistant_measurement_list.layoutManager = LinearLayoutManager(this)
+        findViewById<RecyclerView>(R.id.rv_heart_assistant_measurement_list).layoutManager = LinearLayoutManager(this)
 
-        // FIXME: add specific WEAR device code
+        // FIXME: Add the specific WEAR device code (as listed under 'Monitoring code' label)
         val code = ""
         this.presenter = Injection.provideHeartAssistantPresenter(code)
     }
@@ -43,9 +44,9 @@ class HeartAssistantActivity : AppCompatActivity(), HeartAssistantView {
     override fun showLast(heartMeasurement: HeartMeasurement) {
         Log.d(TAG, "showLast: $heartMeasurement")
 
-        tv_heart_assistant_instant_value.text =
+        findViewById<TextView>(R.id.tv_heart_assistant_instant_value).text =
             MessageFormat.format("{0} bpm", heartMeasurement.value)
-        tv_heart_assistant_instant_date!!.text =
+        findViewById<TextView>(R.id.tv_heart_assistant_instant_date).text =
             DateUtils.getRelativeTimeSpanString(
                 heartMeasurement.timestamp,
                 System.currentTimeMillis(),
@@ -56,7 +57,7 @@ class HeartAssistantActivity : AppCompatActivity(), HeartAssistantView {
     override fun showList(heartMeasurementList: List<HeartMeasurement>) {
         Log.d(TAG, "showList: " + heartMeasurementList.size)
 
-        rv_heart_assistant_measurement_list?.adapter = MeasurementsAdapter(heartMeasurementList)
+        findViewById<RecyclerView>(R.id.rv_heart_assistant_measurement_list)?.adapter = MeasurementsAdapter(heartMeasurementList)
     }
 
     companion object {
